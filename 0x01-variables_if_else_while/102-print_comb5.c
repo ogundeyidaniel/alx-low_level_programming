@@ -3,10 +3,11 @@
 #include <time.h>
 
 /**
- * main - Prints numbers between 00 to 99.
+ * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
+
 int main(void)
 {
 	int p,q;
@@ -23,6 +24,7 @@ int main(void)
 
 			if (p == 98 && q == 99)
 				continue;
+
 			putchar(',');
 			putchar(' ');
 		}
