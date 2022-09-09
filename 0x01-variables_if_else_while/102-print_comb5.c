@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
  * main - Prints numbers between 00 to 99.
@@ -7,39 +9,25 @@
  */
 int main(void)
 {
-	int i, e, g, h, op1, op2;
+	int p,q;
 
-	i = e = g = h = 48;
-	while (h < 58)
+	for (p = 0; p <= 98; p++)
 	{
-		g = 48;
-		while (g < 58)
+		for (q = p + 1; q <= 99; q++)
 		{
-			e = 48;
-			while(e < 58)
-			{
-				op1 = (h * 10) + g;
-				op2 = (e *10) + i ;
-				if (op1 < op2)
-				{
-					putchar(h);
-					putchar(g);
-					putchar(' ');
-					putchar(e);
-					putchar(i);
-					if (h == 57 && g == 56 && e == 57 && i == 57)
-						break;
-					putchar(',');
-					putchar(' ');
-				}
-				i++;
-			}
-			e++;
+			putchar((p / 10) + '0');
+			putchar((p % 10) + '0');
+			putchar(' ');
+			putchar((q / 10) + '0');
+			putchar((q % 10) + '0');
+
+			if (p == 98 && q == 99)
+				continue;
+			putchar(',');
+			putchar(' ');
 		}
-		g++;
 	}
-	h++;
-}
-putchar('\n');
-return (0);
+	putchar('\n');
+	
+	return (0);
 }
