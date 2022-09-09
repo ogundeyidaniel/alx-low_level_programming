@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
  * main - Prints numbers from 0 to 9.
@@ -9,10 +11,11 @@ int main(void)
 {
 	int i;
 	
-	for (i + o; i < 10; i++)
+	for (i = 0; i < 10; i++)
 	{
 		printf("%d", i);
 	}
 	putchar('\n');
+	
 	return (0);
 }
