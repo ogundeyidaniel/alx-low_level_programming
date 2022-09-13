@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_last_digit - a function that prints the last digit
- * of a number
+ * jack_bauer - a function that pritns every minutes of the day of
+ * jack Bauer,starting from 00:00 to 23:59
  *
  * @n: input variables as an integer
  *
