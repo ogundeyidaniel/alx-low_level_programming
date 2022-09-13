@@ -1,11 +1,11 @@
 #include <unistd.h>
-#include "holberton.h"
 
 /**
- *  main - write a program thats prints _putchar
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
  *
- *
- *  Return: on success 0
+ * Return: On success 1
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c)
 { 
