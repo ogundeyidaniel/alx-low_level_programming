@@ -6,7 +6,7 @@
  *
  * @n: input variables as an integer
  *
- * Return: last digit
+ * Return: last digit.
  */
 int print_last_digit(int n)
 {
@@ -21,5 +21,6 @@ int print_last_digit(int n)
 	else
 	{
 		_putchar(b + 48);
-		return (b)
+		return (b);
 	}
+}
