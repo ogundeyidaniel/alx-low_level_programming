@@ -1,11 +1,11 @@
-#include <main.h>
+#include "main.h"
 
 /**
- * _islower - A function that checks for lowercase character
- * and returns 1 if c is lowercase character
- * returns 0 otherwise
- *
+ * _islower - Check Main
  * @c: Using the character in ASCII code
+ *
+ * Description: A function that returns 1 if c is lowercase character
+ * returns 0 otherwise
  *
  * Return: 1 for small letters and 0 for the rest.
  */
