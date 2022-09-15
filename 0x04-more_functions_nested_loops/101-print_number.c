@@ -1,12 +1,12 @@
 #include "main.h"
-void print_integer(int m);
+void print_number(int m);
 
 /**
  * print_number - a function that prints an integer.
  * @n: An input integer
  * Return: Nothing
  */
-void print_interger(int n)
+void print_number(int n)
 {
 	if (n == 0)
 		_putchar('0');
@@ -24,7 +24,7 @@ void print_interger(int n)
  * @m: an input unsigned integer
  * Return: Nothing
  */
-void print_integer(int m)
+void print_number(int m)
 {
 	int i = 1000000000;
 
