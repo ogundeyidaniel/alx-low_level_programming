@@ -2,9 +2,9 @@
 void print_integer(int m);
 
 /**
- * print_number - prints an integer.
- * @n: input integer.
- * Return: no return.
+ * print_number - a function that prints an integer.
+ * @n: An input integer
+ * Return: Nothing
  */
 void print_number(int n)
 {
