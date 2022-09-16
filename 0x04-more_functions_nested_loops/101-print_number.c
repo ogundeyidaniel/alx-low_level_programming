@@ -13,7 +13,7 @@ if (n < 0)
 _putchar(45);
 x = -x;
 }
-if ((x / 10) >0)
+if ((x / 10) > 0)
 {
 print_number(x / 10);
 }
