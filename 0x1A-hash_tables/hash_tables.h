@@ -1,9 +1,10 @@
-#ifndef _HASH_TABLES_H_
-#define _HASH_TABLES_H_
+#ifndef HASH_TABLES_H
+#define HASH_TABLES_H
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 /**
  * struct hash_node_s - Node of a hash table
@@ -33,8 +34,6 @@ typedef struct hash_table_s
 	unsigned long int size;
 	hash_node_t **array;
 } hash_table_t;
-
-/* Prototypes */
 
 hash_table_t *hash_table_create(unsigned long int size);
 unsigned long int hash_djb2(const unsigned char *str);
@@ -88,4 +87,10 @@ void shash_table_print(const shash_table_t *ht);
 void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 
-#endif /* _HASH_TABLES_H_ */
+int search_and_replace(shash_table_t *ht, const char *key, const char *value);
+shash_node_t *create_node(shash_table_t *ht, const char *key, const char *val);
+void print_in_order(const shash_table_t *ht, _Bool in_order);
+void insert_in_beginning(shash_table_t *ht, shash_node_t *new_node);
+void insert_in_middle_or_end(shash_table_t *ht, shash_node_t *new_node);
+
+#endif /* HASH_TABLES_H */

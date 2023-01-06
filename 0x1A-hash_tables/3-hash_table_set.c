@@ -1,50 +1,43 @@
 #include "hash_tables.h"
+
 /**
- * hash_table_set - Function that adds an element to the hash table
- * @ht: Hash table you want to add or update the key/value to
- * @key: Key of the hash table
- * @value: Value associated with the key
- *
- * Description: Function that adds an element to the hash table
- * In case of collision, add the new node at the beginning of the list
- * Return: 1 if it succeeded, 0 otherwise
+ * hash_table_set - adds an element to the hash table
+ * @ht: hash table you want to add or update the key/value to
+ * @key: input key, cannot be empty
+ * @value: value associated with the key, can be empty
+ * Return: 1 if succeeded, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx, i;
-	hash_node_t *node = NULL;
+	unsigned long int idx;
+	hash_node_t *curr, *new_node;
 
-	if (!ht || !key || !*key || *key == 48 || strlen(key) == 0 || !value)
+	if (!ht || !key || !value)
 		return (0);
 	idx = key_index((const unsigned char *)key, ht->size);
-	for (i = idx; ht->array[i]; ++i)
+	curr = ht->array[idx];
+	while (curr)
 	{
-		if (!strcmp(ht->array[i]->key, key))
+		if (strcmp(curr->key, key) == 0)
 		{
-			free(ht->array[i]->value);
-			ht->array[i]->value = strdup(value);
-			if (!ht->array[i]->value)
+			free(curr->value);
+			curr->value = strdup(value);
+			if (!curr->value)
 				return (0);
 			return (1);
 		}
+		curr = curr->next;
 	}
-	node = malloc(sizeof(hash_node_t));
-	if (!node)
+	new_node = malloc(sizeof(hash_node_t));
+	if (!new_node)
 		return (0);
-	node->key = strdup(key);
-	if (!node->key)
-	{
-		free(node);
+	new_node->key = strdup(key);
+	if (!new_node->key)
 		return (0);
-	}
-	node->value = strdup(value);
-	if (!node->value)
-	{
-		free(node->key);
-		free(node);
+	new_node->value = strdup(value);
+	if (!new_node->value)
 		return (0);
-	}
-	node->next = ht->array[idx];
-	ht->array[idx] = node;
+	new_node->next = ht->array[idx];
+	ht->array[idx] = new_node;
 	return (1);
 }
